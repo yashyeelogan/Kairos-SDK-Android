@@ -4,7 +4,7 @@
     api-level="23"
     density="560dpi"
     format="7"
-    timestamp="105147836682874" >
+    timestamp="112261409996144" >
 
     <task
         name="javac"
@@ -14,26 +14,26 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="28" />
+        duration="88" />
     <task
         name="verifier"
-        duration="2" />
+        duration="5" />
 
     <artifact
         location="C:\Users\Yash-yee\StudioProjects\Kairos-SDK-Android-master1\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
         type="DEX" />
 
-    <build timestamp="104592556393758" >
+    <build timestamp="107657434122122" >
         <artifact
             location="C:\Users\Yash-yee\StudioProjects\Kairos-SDK-Android-master1\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="105021927580119" >
+    <build timestamp="111235237189098" >
         <artifact
             location="C:\Users\Yash-yee\StudioProjects\Kairos-SDK-Android-master1\app\build\intermediates\res\resources-debug.ap_"
             type="RESOURCES" />
     </build>
-    <build timestamp="105147836682874" >
+    <build timestamp="112261409996144" >
         <artifact
             location="C:\Users\Yash-yee\StudioProjects\Kairos-SDK-Android-master1\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
             type="DEX" />

@@ -1,0 +1,2 @@
+CHANGED,C:\Users\Yash-yee\StudioProjects\Kairos-SDK-Android-master1\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\kairos\android\example\MyActivity$override.class
+CHANGED,C:\Users\Yash-yee\StudioProjects\Kairos-SDK-Android-master1\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class

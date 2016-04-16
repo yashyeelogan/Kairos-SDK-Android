@@ -9,6 +9,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kairos.*;
@@ -19,6 +20,11 @@ import java.io.UnsupportedEncodingException;
 
 public class MyActivity extends Activity {
 
+    private Bitmap image;
+    //private String image = "";
+    private Intent intent;
+    private Kairos myKairos = new Kairos();
+    private KairosListener listener;
     /**
      * Called when the activity is first created.
      */
@@ -29,16 +35,16 @@ public class MyActivity extends Activity {
         setContentView(R.layout.main);
 
         // listener
-        KairosListener listener = new KairosListener() {
+        listener = new KairosListener() {
 
             Button camButton = (Button) findViewById(R.id.camButton);
 
             @Override
             public void onSuccess(String response) {
-                startActivity(new Intent(getApplicationContext(), CameraActivity.class));
+                //startActivity(new Intent(getApplicationContext(), CameraActivity.class));
                 camButton.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                        intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                         startActivityForResult(intent, 100);
                     }
                 });
@@ -53,7 +59,7 @@ public class MyActivity extends Activity {
 
 
         /* * * instantiate a new kairos instance * * */
-        Kairos myKairos = new Kairos();
+        //Kairos myKairos = new Kairos();
 
         /* * * set authentication * * */
         String app_id = "24a7b953";
@@ -84,8 +90,8 @@ public class MyActivity extends Activity {
             /* * * * * * * * DETECT EXAMPLES * * * * * * *
             // Bare-essentials Example:
             // This example uses only an image url, setting optional params to null */
-            String image = "http://media.kairos.com/liz.jpg";
-            myKairos.detect(image, null, null, listener);
+            //String image = "http://media.kairos.com/liz.jpg";
+            //myKairos.detect(image, null, null, listener);
             // Fine-grained Example:
             /*/ This example uses a bitmap image and also optional parameters
             Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.liz);
@@ -99,14 +105,15 @@ public class MyActivity extends Activity {
             /* * * * * * * * ENROLL EXAMPLES * * * * * * *
             // Bare-essentials Example:
             // This example uses only an image url, setting optional params to null
-            String image = "http://media.kairos.com/liz.jpg";
-            String subjectId = "Elizabeth";
-            String galleryId = "friends";
-            myKairos.enroll(image, subjectId, galleryId, null, null, null, listener);
-            // Fine-grained Example:
+            String image = "http://media.kairos.com/liz.jpg"; */
+            //onActivityResult(100, RESULT_OK, intent);
+//            String subjectId = "Yash-yee";
+//            String galleryId = "friends";
+//            myKairos.enroll(image, subjectId, galleryId, null, null, null, listener);
+            /*/ Fine-grained Example:
             // This example uses a bitmap image and also optional parameters
             Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.liz);
-            String subjectId = "Elizabeth";
+            String subjectId = "Yash-yee";
             String galleryId = "friends";
             String selector = "FULL";
             String multipleFaces = "false";
@@ -118,16 +125,16 @@ public class MyActivity extends Activity {
                     multipleFaces,
                     minHeadScale,
                     listener);
-                    */
+
 
 
             /* * * * * * * RECOGNIZE EXAMPLES * * * * * * *
             // Bare-essentials Example:
             // This example uses only an image url, setting optional params to null
-            String image = "http://media.kairos.com/liz.jpg";
-            String galleryId = "friends";
-            myKairos.recognize(image, galleryId, null, null, null, null, listener);
-            // Fine-grained Example:
+            String image = "http://media.kairos.com/liz.jpg";*/
+//            String galleryId = "friends";
+//            myKairos.recognize(image, galleryId, null, null, null, null, listener);
+            /*/ Fine-grained Example:
             // This example uses a bitmap image and also optional parameters
             Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.liz);
             String galleryId = "friends";
@@ -164,6 +171,27 @@ public class MyActivity extends Activity {
             e.printStackTrace();
         }
 
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+//
+        Bundle extras = intent.getExtras();
+//        ImageView imageView1 = (ImageView) findViewById(R.id.image);
+//        imageView1.setImageBitmap((Bitmap) extras.get("data"));
+        //BitmapFactory.decodeResource((Bitmap) extras.get("data"), int id);
+        image = Bitmap.createBitmap((Bitmap) extras.get("data"));
+        //image = (String) extras.get("data");
+        String subjectId = "Yash-yee";
+        String galleryId = "friends";
+        try {
+            myKairos.enroll(image, subjectId, galleryId, null, null, null, listener);
+            //Log.d("KAIROS DEMO", response);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
     }
 }

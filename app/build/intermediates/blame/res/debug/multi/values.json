@@ -20,6 +20,44 @@
                         "endOffset": 101
                     }
                 }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 106,
+                    "endColumn": 41,
+                    "endOffset": 143
+                },
+                "from": {
+                    "file": "C:\\Users\\Yash-yee\\StudioProjects\\Kairos-SDK-Android-master1\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 150,
+                        "endColumn": 41,
+                        "endOffset": 187
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 148,
+                    "endColumn": 43,
+                    "endOffset": 187
+                },
+                "from": {
+                    "file": "C:\\Users\\Yash-yee\\StudioProjects\\Kairos-SDK-Android-master1\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 106,
+                        "endColumn": 43,
+                        "endOffset": 145
+                    }
+                }
             }
         ]
     }
